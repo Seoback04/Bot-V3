@@ -25,13 +25,14 @@ class ResumeParser:
         self.client = client or OpenAIClient()
 
     def parse(self, resume_text: str) -> CandidateProfile:
-        resume_text = clean(resume_text)
-        if not resume_text:
+        raw = resume_text or ""
+        cleaned = clean(raw)
+        if not cleaned:
             raise ValueError("Empty resume text.")
 
         payload = self.client.chat_json(
             RESUME_TO_PROFILE_SYSTEM,
-            resume_to_profile_user(resume_text),
+            resume_to_profile_user(cleaned),
         )
         if payload is not None:
             try:
@@ -39,7 +40,8 @@ class ResumeParser:
             except ValidationError as e:
                 log.warning("AI resume output failed schema; falling back. err=%s", e)
 
-        return _post_process(_heuristic_profile(resume_text))
+        # Heuristic path needs per-line structure, so use the raw text.
+        return _post_process(_heuristic_profile(raw))
 
 
 def _post_process(profile: CandidateProfile) -> CandidateProfile:
@@ -61,11 +63,19 @@ def _heuristic_profile(text: str) -> CandidateProfile:
     portfolio = _first([u for u in urls if u not in {linkedin, github}])
 
     name = "Unknown Candidate"
+    skip_tokens = ("@", "http", "linkedin", "github", "portfolio", "summary",
+                   "experience", "education", "skills", "projects",
+                   "certifications", "phone", "email")
     for line in text.splitlines():
         s = line.strip()
-        if 2 <= len(s.split()) <= 5 and all(
-            c.isalpha() or c.isspace() or c in ".-'" for c in s
-        ):
+        if not s:
+            continue
+        lower = s.lower()
+        if any(tok in lower for tok in skip_tokens):
+            continue
+        if not (2 <= len(s.split()) <= 5):
+            continue
+        if all(c.isalpha() or c.isspace() or c in ".-'" for c in s):
             name = s
             break
 
