@@ -1,0 +1,32 @@
+{
+  "full_name": "Jane A. Doe",
+  "email": "jane.doe@example.com",
+  "phone": "+1 (415) 555-0199",
+  "location": "San Francisco, CA",
+  "linkedin": "https://linkedin.com/in/janedoe",
+  "github": "https://github.com/janedoe",
+  "portfolio": "https://janedoe.dev",
+  "years_of_experience": 6,
+  "work_authorization": "US Citizen",
+  "skills": [
+    "Python", "TypeScript", "Playwright", "Selenium", "Pytest",
+    "Docker", "Kubernetes", "GitHub Actions", "REST APIs", "SQL",
+    "Pydantic", "OpenAI API"
+  ],
+  "education": [
+    {"degree": "B.S. Computer Science", "institution": "University of California", "year": 2018}
+  ],
+  "work_experience": [
+    {"title": "Senior SDET", "company": "Acme Corp", "start_date": "2022", "end_date": "Present",
+     "description": "Built a Playwright-based regression suite with 1,200+ tests."},
+    {"title": "QA Automation Engineer", "company": "Globex", "start_date": "2019", "end_date": "2022",
+     "description": "Designed a Selenium Grid on Kubernetes serving 200+ runs/day."}
+  ],
+  "projects": [
+    {"name": "AI Resume Job Apply Bot", "description": "AI-assisted form automation with confidence scoring."},
+    {"name": "Flaky Test Detector", "description": "Historical CI signal analyzer."}
+  ],
+  "certifications": ["ISTQB Foundation Level"],
+  "summary": "SDET with 6 years of experience in Playwright, Selenium, and AI-assisted QA tooling.",
+  "preferred_job_titles": ["SDET", "QA Automation Engineer", "Test Infrastructure Engineer"]
+}

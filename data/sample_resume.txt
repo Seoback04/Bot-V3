@@ -1,0 +1,43 @@
+Jane A. Doe
+San Francisco, CA
+jane.doe@example.com | +1 (415) 555-0199
+LinkedIn: https://linkedin.com/in/janedoe
+GitHub: https://github.com/janedoe
+Portfolio: https://janedoe.dev
+
+SUMMARY
+Software Engineer in Test with 6 years of experience building browser automation
+frameworks, CI-integrated test suites, and AI-assisted QA tooling. Skilled in
+Python, TypeScript, Playwright, and Selenium.
+
+WORK EXPERIENCE
+Senior SDET - Acme Corp (2022 - Present)
+- Built a Playwright-based regression suite with 1,200+ tests and parallel execution.
+- Introduced flaky-test quarantine workflow, reducing CI failures by 38%.
+
+QA Automation Engineer - Globex (2019 - 2022)
+- Designed a Selenium Grid deployment on Kubernetes serving 200+ daily test runs.
+- Led migration from manual regression to automated smoke + regression coverage.
+
+EDUCATION
+B.S. Computer Science - University of California, 2018
+
+SKILLS
+Python, TypeScript, Playwright, Selenium, Pytest, Docker, Kubernetes, GitHub Actions,
+REST APIs, SQL, Pydantic, OpenAI API
+
+PROJECTS
+AI Resume Job Apply Bot - AI-assisted form automation with confidence scoring.
+Flaky Test Detector - Historical CI signal analyzer.
+
+CERTIFICATIONS
+ISTQB Foundation Level
+
+PREFERRED ROLES
+SDET, QA Automation Engineer, Test Infrastructure Engineer
+
+WORK AUTHORIZATION
+US Citizen
+
+YEARS OF EXPERIENCE
+6

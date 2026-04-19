@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Demo Job Application Form</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { margin-bottom: 0.25rem; }
+    p.sub { color: #666; margin-top: 0; }
+    fieldset { border: 1px solid #ddd; border-radius: 6px; padding: 1rem; margin: 1rem 0; }
+    legend { padding: 0 0.5rem; font-weight: 600; }
+    label { display: block; margin-top: 0.75rem; font-weight: 500; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="url"],
+    input[type="number"], input[type="date"], select, textarea {
+      width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
+      font-size: 1rem;
+    }
+    textarea { min-height: 100px; }
+    .row { display: flex; gap: 1rem; }
+    .row > div { flex: 1; }
+    .radio-group label, .checkbox-group label { display: inline-flex; align-items: center; gap: 0.4rem; margin-right: 1rem; font-weight: 400; }
+    button { background: #0b5; color: white; border: 0; padding: 0.6rem 1rem; border-radius: 4px; font-size: 1rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Demo Job Application</h1>
+  <p class="sub">Local HTML form for testing AI Resume Job Apply Bot.</p>
+
+  <form id="application-form" action="#" method="post" onsubmit="event.preventDefault(); alert('Submitted (demo).');">
+    <fieldset>
+      <legend>Contact</legend>
+      <div class="row">
+        <div>
+          <label for="first_name">First Name *</label>
+          <input id="first_name" name="first_name" type="text" required placeholder="First name" />
+        </div>
+        <div>
+          <label for="last_name">Last Name *</label>
+          <input id="last_name" name="last_name" type="text" required placeholder="Last name" />
+        </div>
+      </div>
+
+      <label for="email">Email *</label>
+      <input id="email" name="email" type="email" required placeholder="you@example.com" />
+
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" type="tel" placeholder="+1 415 555 0199" />
+
+      <div class="row">
+        <div>
+          <label for="city">City</label>
+          <input id="city" name="city" type="text" placeholder="City" />
+        </div>
+        <div>
+          <label for="country">Country</label>
+          <input id="country" name="country" type="text" placeholder="Country" />
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Links</legend>
+      <label for="linkedin">LinkedIn URL</label>
+      <input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/..." />
+
+      <label for="github">GitHub URL</label>
+      <input id="github" name="github" type="url" placeholder="https://github.com/..." />
+
+      <label for="portfolio">Portfolio / Website</label>
+      <input id="portfolio" name="portfolio" type="url" placeholder="https://yourdomain.dev" />
+    </fieldset>
+
+    <fieldset>
+      <legend>Role</legend>
+      <label for="preferred_title">Preferred Job Title</label>
+      <select id="preferred_title" name="preferred_title">
+        <option value="">-- Select --</option>
+        <option>SDET</option>
+        <option>QA Automation Engineer</option>
+        <option>Test Infrastructure Engineer</option>
+        <option>Frontend Engineer</option>
+        <option>Backend Engineer</option>
+      </select>
+
+      <label for="years_of_experience">Years of Experience</label>
+      <input id="years_of_experience" name="years_of_experience" type="number" min="0" max="50" step="1" />
+
+      <label for="start_date">Earliest Start Date</label>
+      <input id="start_date" name="start_date" type="date" />
+
+      <label>Do you require visa sponsorship?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="visa_sponsorship" id="visa_yes" value="yes" /> Yes</label>
+        <label><input type="radio" name="visa_sponsorship" id="visa_no" value="no" /> No</label>
+      </div>
+
+      <label for="work_authorization">Work Authorization</label>
+      <input id="work_authorization" name="work_authorization" type="text" placeholder="e.g., US Citizen" />
+    </fieldset>
+
+    <fieldset>
+      <legend>About you</legend>
+      <label for="cover_letter">Cover Letter / Summary</label>
+      <textarea id="cover_letter" name="cover_letter" placeholder="Tell us about yourself..."></textarea>
+
+      <label for="resume">Resume Upload</label>
+      <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx,.txt" />
+
+      <div class="checkbox-group" style="margin-top:1rem;">
+        <label><input type="checkbox" id="consent" name="consent" /> I agree to the Privacy Policy and Terms.</label>
+      </div>
+    </fieldset>
+
+    <button type="submit">Review &amp; Submit</button>
+  </form>
+</body>
+</html>
