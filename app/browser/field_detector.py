@@ -32,7 +32,7 @@ _HEURISTICS: list[tuple[str, SemanticLabel]] = [
     (r"cover.?letter", "cover_letter"),
     (r"summary|about.?you|bio", "summary"),
     (r"resume|cv", "resume_upload"),
-    (r"years.{0,3}experience|yrs.?exp|exp.*years", "years_of_experience"),
+    (r"years.{0,5}experience|yrs.?exp|exp.*years", "years_of_experience"),
     (r"current.?title|current.?role|job.?title", "current_title"),
     (r"current.?company|employer", "current_company"),
     (r"preferred.?title|desired.?role|role.?interest", "preferred_job_title"),
